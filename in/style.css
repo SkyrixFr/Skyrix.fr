@@ -1,0 +1,9 @@
+body {
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 20px;
+    background-color: #fdf2e9 ;
+    color: #444444;
+    font-family: monospace;
+    font-size: large;
+}
