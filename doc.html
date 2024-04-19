@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
+<link rel="stylesheet" type="text/css" href="/style.css" /><title>Josh's Blog</title>
 <meta charset="UTF-8">
-</head>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
 <body>
 <h1>smu - a Simple Markup Language</h1>
 <p><em>smu</em> is a very simple and minimal markup language. It is designed for use in
@@ -20,14 +20,7 @@ is that smu doesn't support <em>reference style links</em></p>
 <h2>Inline pattern</h2>
 <p>There are several pattern you can use to highlight your text:</p>
 <ul>
-<li><!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<p>Emphasis
+<li><p>Emphasis
 <ul>
 <li>Surround your text with <code>*</code> or <code>_</code> to get <em>emphasised</em> text:
 <pre><code>This *is* cool.
@@ -56,14 +49,7 @@ Use this instead:
 </ul>
 </p>
 </li>
-<li><!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<p>inline Code</p>
+<li><p>inline Code</p>
 <p>You can produce inline code with surrounding <code>\`</code> or <code>\`\`</code></p>
 <pre><code>Use `rm -rf /` if you're a N00b.
 </code></pre>
@@ -172,14 +158,7 @@ This is a quote with a &lt;a href=&quot;http://s01.de/~gottox&quot;&gt;link&lt;/
 <p>Please note that you can't use HTML or smu syntax in a code block.</p>
 <h2>Other interesting stuff</h2>
 <ul>
-<li><!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<p>to insert a horizontal rule simple add <code>- - -</code> into an empty line:</p>
+<li><p>to insert a horizontal rule simple add <code>- - -</code> into an empty line:</p>
 <pre><code>Hello
 - - -
 Hello2
@@ -193,25 +172,11 @@ Hello
 <pre><code>Hello2&lt;/p&gt;
 </code></pre>
 </li>
-<li><!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<p>You can escape the following pattern to avoid them from being interpreted:</p>
+<li><p>You can escape the following pattern to avoid them from being interpreted:</p>
 <pre><code>\ ` * _ { } [ ] ( ) # + - . !
 </code></pre>
 </li>
-<li><!DOCTYPE html>
-<html>
-<head>
-<link rel="stylesheet" type="text/css" href="style.css" /><title>Josh's Blog</title>
-<meta charset="UTF-8">
-</head>
-<body>
-<p>To force a linebreak simple add two spaces to the end of the line:</p>
+<li><p>To force a linebreak simple add two spaces to the end of the line:</p>
 <pre><code>No linebreak
 here.
 But here is  
