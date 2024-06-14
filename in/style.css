@@ -7,3 +7,12 @@ body {
     font-family: monospace;
     font-size: large;
 }
+
+.mws {
+	position: absolute;
+	bottom: 5px;
+}
+
+.mws a{
+	text-decoration: none;
+}

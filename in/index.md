@@ -1,7 +1,4 @@
-# Josh's blog - a blog about a lot of stuff
-- - -
-
-<br />Hi! Welcome, thank you for beeing here. My name is Josh, also known as Skyrix, SkyrixFr or Skyrix_
+Hi! Welcome, thank you for beeing here. My name is Josh, also known as Skyrix, SkyrixFr or Skyrix_
 <br />
 <br />
 

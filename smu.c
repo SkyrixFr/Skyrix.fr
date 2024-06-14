@@ -37,8 +37,6 @@ static void eprint(const char *format, ...);
 static void hprint(const char *begin, const char *end);                   /* escapes HTML and prints it to output */
 static void process(const char *begin, const char *end, int isblock);     /* Processes range between begin and end. */
 
-static bool headOutputted = false;                                        /* so the head doesnt repeat itself */
-
 /* list of parsers */
 static Parser parsers[] = { dounderline, docomment, dolineprefix,
                             dolist, doparagraph, dogtlt, dosurround, dolink,
@@ -612,24 +610,6 @@ process(const char *begin, const char *end, int newblock) {
 	int affected;
 	unsigned int i;
 
-	/* Begining of modification to add head */
-
-	if (newblock && !headOutputted) {
-        fputs("<!DOCTYPE html>\n<html>\n<head>\n", stdout);
-        /* Add your head content here */
-
-		fputs("<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\" />", stdout);
-
-        fputs("<title>Josh's Blog</title>\n", stdout);
-        fputs("<meta charset=\"UTF-8\">\n", stdout);
-		fputs(" <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", stdout);
-        /* Add more head content as needed */
-        fputs("</head>\n<body>\n", stdout);
-
-		headOutputted = true;
-    }
-
-	/* End of modification*/
 
 	for(p = begin; p < end;) {
 		if(newblock)
@@ -657,8 +637,28 @@ process(const char *begin, const char *end, int newblock) {
 	}
 }
 
-int
-main(int argc, char *argv[]) {
+void headModifier() {
+        fputs("<!DOCTYPE html>\n<html>\n<head>\n", stdout);
+        /* Add your head content here */
+
+		fputs("<link rel=\"stylesheet\" type=\"text/css\" href=\"/style.css\" />", stdout);
+
+        fputs("<title>Josh's Blog</title>\n", stdout);
+        fputs("<meta charset=\"UTF-8\">\n", stdout);
+		fputs(" <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">", stdout);
+        /* Add more head content as needed */
+        fputs("</head>\n<body>\n", stdout);
+
+		fputs("<h1>Josh's blog - a blog about a lot of stuff</h1>\n<hr />\n<br />\n", stdout);
+}
+
+void footerModifier() {
+		fputs("<div class=\"mws\"><p>Made with ❤️ with <a href=\"https://github.com/Gottox/smu\" target=\"_blank\">smu</a></p></div>\n", stdout);
+
+		fputs("</body>\n", stdout);
+}
+
+int main(int argc, char *argv[]) {
 	char *buffer = NULL;
 	int s, i;
 	unsigned long len, bsize;
@@ -692,7 +692,9 @@ main(int argc, char *argv[]) {
 		}
 	}
 	buffer[len] = '\0';
+	headModifier();
 	process(buffer, buffer + len, 1);
+	footerModifier();
 	fclose(source);
 	free(buffer);
 	return EXIT_SUCCESS;
