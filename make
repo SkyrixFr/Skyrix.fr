@@ -1,4 +1,7 @@
 #!/bin/bash
+# This code is used for automating the process of the website creation
+# See LICENSE for further informations
+
 
 echo compiling smu
 make clean

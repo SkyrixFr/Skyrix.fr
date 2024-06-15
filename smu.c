@@ -3,6 +3,13 @@
  *
  * See LICENSE for further informations
  */
+
+/* WARNING!!
+ * This file (c.f. smu.c) is modified for my own personal website.
+ * I do not advise to use this code and I would not be held liable for any damages
+ * that this code could produce
+ */
+
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
